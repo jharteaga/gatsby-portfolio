@@ -1,0 +1,107 @@
+/*
+* Styling the third section in Home Page
+* Section: My Current Work
+*/
+.experience {
+  padding: 6rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  &__divider {
+    @include divider();
+  }
+
+  &__top {
+    p:first-child {
+      font-weight: 400;
+    }
+    p:last-child {
+      font-weight: 200;
+    }
+  }
+
+  &__date {
+    display: flex;
+
+    p {
+      font-weight: 200;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__statements {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+
+    ul {
+      list-style-type: none;
+
+      li {
+        font-weight: 300;
+        margin-bottom: 0.6rem;
+        margin-left: 0.5rem;
+
+        &:before {
+          content: '\0279C';
+          color: $bullet-color;
+          margin: 0 10px 0 -25px;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    margin-top: 1.5rem;
+    align-self: center;
+
+    button {
+      @include styleButton;
+    }
+  }
+
+  @include mediumLargeDevice {
+    max-width: $max-width-content;
+    margin-left: 6rem;
+
+    &__wrapper {
+      margin: 1.5rem 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 6rem;
+    }
+
+    &__top {
+      width: 200px;
+      p:first-child {
+        font-size: 1.2rem;
+      }
+      p:last-child {
+        font-size: 1.1rem;
+        font-weight: 200;
+      }
+    }
+
+    &__statements {
+      margin-top: 0;
+      font-size: 1rem;
+    }
+  }
+
+  @include largeDevice {
+    margin: 0 auto;
+    padding-left: 6rem;
+  }
+}
