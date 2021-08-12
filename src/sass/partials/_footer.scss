@@ -1,0 +1,176 @@
+/*
+* Styling the footer, except in say-hello page
+*/
+.site-footer {
+  background-color: $footer-bg-color;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 1rem;
+
+  .attribution {
+    text-align: center;
+    font-weight: 300;
+    margin-top: 0.5rem;
+    color: $attribution-color;
+
+    @include mediumLargeDevice {
+      margin-top: -3rem;
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $contact-bg-color;
+  max-width: 700px;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 18px;
+  padding: 1rem;
+  position: relative;
+  top: -5rem;
+  gap: 1rem;
+  color: $contact-text-color;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px #141c3a;
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__tagline {
+    font-weight: 300;
+  }
+
+  &__cta {
+    align-self: center;
+
+    button {
+      @include styleButton(
+        $contact-btn-border-color,
+        3px,
+        $contact-bg-color,
+        none,
+        $contact-hover-color
+      );
+    }
+  }
+}
+
+footer .menu-container {
+  margin-top: -2rem;
+
+  @include mediumLargeDevice {
+    position: fixed;
+    top: 45vh;
+    left: 30px;
+    margin-top: 0;
+
+    .social-menu {
+      flex-direction: column;
+
+      a[href^="https://linkedin.com"]:before,
+      a[href^="https://github.com"]:before,
+      a[href^="https://twitter.com"]:before
+      {
+        color: $social-media-desktop-color;
+      }
+    }
+  }
+
+  @include extraLargeDevice {
+    left: 60px;
+  }
+}
+
+.social-menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+
+  a[href^="https://linkedin.com"]:before,
+  a[href^="https://github.com"]:before,
+  a[href^="https://twitter.com"]:before
+  {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 2rem;
+    color: $social-media-mobile-color;
+  }
+
+  a[href^="https://linkedin.com"]:before
+  {
+    content: '\f08c';
+  }
+
+  a[href^="https://github.com"]:before
+  {
+    content: '\f092';
+  }
+
+  a[href^="https://twitter.com"]:before
+  {
+    content: '\f081';
+  }
+
+  li:last-of-type {
+    border: 2px solid $footer-bg-color;
+    width: 2px;
+    border-radius: 5px;
+    height: 100px;
+    align-self: center;
+  }
+}
+
+/*
+* Styling the footer in say-hello page
+*/
+footer.site-footer.say-hello {
+  background-color: $footer-bg-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+
+  .attribution {
+    text-align: center;
+    font-weight: 300;
+    margin: 0.5rem auto;
+    color: $attribution-color;
+  }
+
+  nav.menu-container {
+    margin-top: 2rem;
+
+    @include mediumLargeDevice {
+      position: fixed;
+      top: 49vh;
+      left: 30px;
+      margin-top: 0;
+
+      .social-menu {
+        flex-direction: column;
+      }
+    }
+
+    @include extraLargeDevice {
+      left: 60px;
+    }
+  }
+
+  @include mediumLargeDevice {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
