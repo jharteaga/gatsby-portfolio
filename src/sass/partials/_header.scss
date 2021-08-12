@@ -1,0 +1,132 @@
+/*
+* Styling the header container
+*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000;
+  background-color: $header-bg-color;
+  box-shadow: 1px 1px 3px 1px rgb(230, 230, 230);
+
+  &__logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .menu-container {
+    display: none;
+  }
+
+  .main-menu {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    list-style-type: none;
+
+    .menu-item {
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        font-size: 1.1rem;
+      }
+
+      &:last-child {
+        padding: 8px;
+        border: 2px dashed $dashed-border-color;
+        border-color: $cta-border-color;
+        position: relative;
+      }
+
+      &.current-menu-item a {
+        color: $cta-bg-color;
+      }
+    }
+  }
+
+  &__hamburger {
+    cursor: pointer;
+    span {
+      font-size: 4rem;
+      color: $primary-color;
+    }
+  }
+
+  @include mediumLargeDevice {
+    padding: 2rem 2rem 1rem 1.5rem;
+
+    &__logo {
+      width: 80px;
+      height: 80px;
+    }
+
+    .menu-container {
+      display: block;
+    }
+
+    &__hamburger {
+      display: none;
+    }
+  }
+}
+
+/*
+* Styling the mobile menu
+*/
+.mobile-menu {
+  background-color: $mobile-menu-bg-color;
+  position: fixed;
+  left: 40%;
+  right: 0;
+  bottom: 0;
+  top: 82px;
+  z-index: 9999;
+  border: 2px solid rgb(243, 243, 243);
+  transform: translateX(100%);
+  transition: transform 0.3s;
+
+  .menu-container {
+    padding: 2rem 0.5rem 0 1rem;
+
+    .main-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      list-style-type: none;
+
+      .menu-item {
+        width: 100%;
+
+        a {
+          text-decoration: none;
+          color: $mobile-menu-text-color;
+          font-size: 1.1rem;
+          font-weight: 500;
+          display: block;
+        }
+
+        &:last-child {
+          padding: 8px 5px;
+          border: 2px dashed $dashed-mobile-border-color;
+          margin-left: -5px;
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  @include mediumLargeDevice {
+    display: none;
+  }
+}

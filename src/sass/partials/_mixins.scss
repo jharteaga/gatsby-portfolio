@@ -1,0 +1,61 @@
+/*
+* Mixins for reusable breakpoints for responsive design
+*/
+@mixin mediumDevice {
+  @media screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin mediumLargeDevice {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin largeDevice {
+  @media screen and (min-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin extraLargeDevice {
+  @media screen and (min-width: 1300px) {
+    @content;
+  }
+}
+
+/*
+* Mixin to create a divider in the Home Page for every section
+*/
+@mixin divider() {
+  flex-grow: 1;
+  height: 3px;
+  background-color: $divider-color;
+  margin-left: 0.6rem;
+}
+
+/*
+* Mixin to style a button
+*/
+@mixin styleButton(
+  $borderColor: $cta-border-color,
+  $borderWidth: 1px,
+  $backgroundColor: $cta-bg-color,
+  $hoverBgColor: $cta-hover-color,
+  $hoverBorderColor: none
+) {
+  width: 11.12rem;
+  height: 3.3rem;
+  border-radius: $cta-border-radius;
+  border: $borderWidth solid $borderColor;
+  color: $cta-text-color;
+  background-color: $backgroundColor;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $hoverBgColor;
+    border-color: $hoverBorderColor;
+  }
+}
