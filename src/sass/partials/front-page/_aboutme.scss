@@ -1,0 +1,75 @@
+/*
+* Styling the second section in Home Page
+* Section: About Me
+*/
+.about {
+  padding: 5.5rem 1rem 0;
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+
+  &__divider {
+    @include divider();
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $primary-color;
+  }
+
+  &__description {
+    font-weight: 300;
+
+    ul li {
+      margin-bottom: 0.5rem;
+      margin-left: 2rem;
+    }
+  }
+
+  &__image {
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    max-width: 350px;
+    height: 300px;
+
+    img {
+      border-radius: 20px;
+      box-shadow: 0 2px 5px 1px rgb(206, 206, 206);
+    }
+  }
+
+  @include mediumLargeDevice {
+    max-width: $max-width-content;
+    margin-left: 6rem;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    &__description {
+      width: 65ch;
+    }
+
+    &__image {
+      margin: 0;
+      filter: grayscale(50%);
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
+  }
+
+  @include largeDevice {
+    margin: 0 auto;
+    padding-left: 6rem;
+  }
+}
