@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Greetings from '../components/home/Greetings';
 import About from '../components/home/About';
 import CurrentWork from '../components/home/CurrentWork';
+import TopProjects from '../components/home/TopProjects';
 
 import '../sass/style.scss';
 
@@ -15,6 +16,7 @@ const IndexPage = () => {
       <Greetings />
       <About />
       <CurrentWork />
+      <TopProjects />
       <Footer />
     </>
   );

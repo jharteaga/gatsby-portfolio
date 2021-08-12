@@ -1,0 +1,86 @@
+/*
+* Styling the fourth section in Home Page
+* Section: Top Projects
+*/
+.top-projects {
+  padding: 4rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  &__divider {
+    @include divider();
+  }
+
+  &__text {
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  &__wrapper {
+    display: grid;
+    justify-content: center;
+    row-gap: 1rem;
+  }
+
+  &__img {
+    img {
+      height: 300px;
+      border-radius: 20px;
+      max-width: 400px;
+      box-shadow: 1px 1px 5px 1px rgb(230, 230, 230);
+    }
+  }
+
+  &__cta {
+    margin-top: 2rem;
+    align-self: center;
+
+    button {
+      @include styleButton;
+    }
+  }
+
+  @include mediumDevice {
+    &__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      column-gap: 1rem;
+      row-gap: 0.5rem;
+    }
+
+    &__img:last-of-type {
+      grid-column: span 2;
+    }
+  }
+
+  @include mediumLargeDevice {
+    max-width: $max-width-content;
+    margin-left: 6rem;
+
+    &__wrapper {
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+    }
+
+    &__img:last-of-type {
+      grid-column: span 1;
+    }
+  }
+
+  @include largeDevice {
+    margin: 0 auto;
+    padding-left: 6rem;
+  }
+}

@@ -38,7 +38,7 @@ const About = () => {
           dangerouslySetInnerHTML={{ __html: cleanHTML }}
         ></div>
         <div className="about__image">
-          <img src={aboutPost.image.sourceUrl} alt="Jose Arteaga Photo" />
+          <img src={aboutPost.image.sourceUrl} alt="" />
         </div>
       </div>
     </div>
