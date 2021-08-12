@@ -21,13 +21,6 @@ const CurrentWork = () => {
 
   const currentWorkPost = data.allWpWorkExperience.nodes[0].experience;
 
-  const cleanHTML = DOMPurify.sanitize(
-    currentWorkPost.accomplishmentStatements,
-    {
-      USE_PROFILES: { html: true },
-    }
-  );
-
   return (
     <>
       <div className="experience">
@@ -55,7 +48,14 @@ const CurrentWork = () => {
           </div>
           <div
             className="experience__statements"
-            dangerouslySetInnerHTML={{ __html: cleanHTML }}
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(
+                currentWorkPost.accomplishmentStatements,
+                {
+                  USE_PROFILES: { html: true },
+                }
+              ),
+            }}
           ></div>
         </div>
 

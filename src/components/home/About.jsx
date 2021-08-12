@@ -22,10 +22,6 @@ const About = () => {
 
   const aboutPost = data.allWpHomePosts.nodes[0].homePosts;
 
-  const cleanHTML = DOMPurify.sanitize(aboutPost.description, {
-    USE_PROFILES: { html: true },
-  });
-
   return (
     <div className="about">
       <div className="about__header">
@@ -35,7 +31,11 @@ const About = () => {
       <div className="about__wrapper">
         <div
           className="about__description"
-          dangerouslySetInnerHTML={{ __html: cleanHTML }}
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(aboutPost.description, {
+              USE_PROFILES: { html: true },
+            }),
+          }}
         ></div>
         <div className="about__image">
           <img src={aboutPost.image.sourceUrl} alt="" />

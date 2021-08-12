@@ -6,6 +6,7 @@ import Greetings from '../components/home/Greetings';
 import About from '../components/home/About';
 import CurrentWork from '../components/home/CurrentWork';
 import TopProjects from '../components/home/TopProjects';
+import Education from '../components/home/Education';
 
 import '../sass/style.scss';
 
@@ -17,6 +18,7 @@ const IndexPage = () => {
       <About />
       <CurrentWork />
       <TopProjects />
+      <Education />
       <Footer />
     </>
   );
