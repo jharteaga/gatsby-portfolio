@@ -1,0 +1,45 @@
+/*
+* Styling the first section in Home Page
+* Section: Greeting
+*/
+.greeting {
+  padding: 6rem 1rem 1rem;
+
+  &__tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+
+  &__title h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  &__description {
+    font-weight: 300;
+    margin-top: 0.5rem;
+  }
+
+  &__cta {
+    margin-top: 2rem;
+
+    button {
+      @include styleButton;
+    }
+  }
+
+  @include mediumLargeDevice {
+    max-width: $max-width-content;
+    margin-left: 6rem;
+
+    &__description {
+      max-width: 80ch;
+    }
+  }
+
+  @include largeDevice {
+    margin: 0 auto;
+    padding-left: 6rem;
+  }
+}

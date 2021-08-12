@@ -1,6 +1,8 @@
 import * as React from 'react';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Greetings from '../components/home/Greetings';
 
 import '../sass/style.scss';
 
@@ -8,7 +10,7 @@ const IndexPage = () => {
   return (
     <>
       <Header />
-      <h1>Jose Arteaga's Portfolio</h1>
+      <Greetings />
       <Footer />
     </>
   );
