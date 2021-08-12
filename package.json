@@ -1,0 +1,29 @@
+{
+  "name": "jose-arteaga-s-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jose Arteaga's Portfolio",
+  "author": "Jose Arteaga",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby": "^3.11.1",
+    "gatsby-plugin-mdx": "^2.11.0",
+    "gatsby-plugin-sass": "^4.11.0",
+    "gatsby-source-filesystem": "^3.11.0",
+    "gatsby-source-wordpress": "^5.11.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sass": "^1.37.5"
+  }
+}
