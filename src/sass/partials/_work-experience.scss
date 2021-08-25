@@ -1,0 +1,104 @@
+/*
+* Styling the Work Experience Page
+*/
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  width: 100%;
+  max-width: 100%;
+
+  h1 {
+    text-align: center;
+  }
+
+  &__companies {
+    margin-top: 2rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-left: 1rem;
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (min-width: 650px) {
+      justify-content: center;
+    }
+  }
+
+  &__company {
+    display: inline-block;
+    margin-right: 0.5rem;
+    cursor: pointer;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      border: 2px solid $company-border-color;
+      object-fit: contain;
+      box-shadow: 1px 1px 3px 1px rgb(235, 235, 235);
+
+      &.active {
+        border: 2px solid $company-active-border-color;
+      }
+    }
+  }
+
+  &__statements {
+    margin-top: 2rem;
+
+    @media screen and (min-width: 650px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__metadata {
+    margin-bottom: 2rem;
+    padding: 0 1rem 0 2rem;
+    // display: none;
+
+    ul {
+      list-style-type: none;
+      max-width: 80ch;
+
+      li {
+        font-weight: 300;
+        margin-bottom: 0.6rem;
+        margin-left: 0.5rem;
+
+        &:before {
+          content: '\0279C';
+          color: $bullet-color;
+          margin: 0 10px 0 -25px;
+        }
+      }
+    }
+
+    // &.active {
+    //   display: block;
+    // }
+  }
+
+  &__dates {
+    display: flex;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  @include mediumLargeDevice {
+    padding-left: 5.5rem;
+    padding-right: 2rem;
+
+    &__companies {
+      padding-left: 2rem;
+    }
+  }
+}
