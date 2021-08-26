@@ -1,8 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import DOMPurify from 'dompurify';
 
-const CurrentWork = () => {
+export const CurrentWork = () => {
   const data = useStaticQuery(graphql`
     query getCurrentWork {
       allWpWorkExperience(limit: 1, sort: { order: ASC, fields: date }) {
@@ -49,14 +48,9 @@ const CurrentWork = () => {
           <div
             className="experience__statements"
             dangerouslySetInnerHTML={{
-              __html: DOMPurify.sanitize(
-                currentWorkPost.accomplishmentStatements,
-                {
-                  USE_PROFILES: { html: true },
-                }
-              ),
+              __html: currentWorkPost.accomplishmentStatements,
             }}
-          ></div>
+          />
         </div>
 
         <div className="experience__cta">
@@ -68,5 +62,3 @@ const CurrentWork = () => {
     </>
   );
 };
-
-export default CurrentWork;

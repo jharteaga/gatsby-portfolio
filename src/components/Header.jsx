@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import MobileMenu from './MobileMenu';
 
 const Header = () => {
-  const [mobileMenuActive, setMobileMenuActive] = React.useState(false);
+  const [mobileMenuActive, setMobileMenuActive] = useState(false);
 
   const toggleMenu = () => {
     setMobileMenuActive(!mobileMenuActive);

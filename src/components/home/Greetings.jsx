@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const Greetings = () => {
+export const Greetings = () => {
   const data = useStaticQuery(graphql`
     query getGreetingPost {
       allWpHomePosts(filter: { slug: { eq: "initial-greeting" } }) {
@@ -33,5 +33,3 @@ const Greetings = () => {
     </div>
   );
 };
-
-export default Greetings;

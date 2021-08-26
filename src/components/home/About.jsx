@@ -1,8 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import DOMPurify from 'dompurify';
 
-const About = () => {
+export const About = () => {
   const data = useStaticQuery(graphql`
     query getAboutPost {
       allWpHomePosts(filter: { slug: { eq: "about-me" } }) {
@@ -31,11 +30,7 @@ const About = () => {
       <div className="about__wrapper">
         <div
           className="about__description"
-          dangerouslySetInnerHTML={{
-            __html: DOMPurify.sanitize(aboutPost.description, {
-              USE_PROFILES: { html: true },
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: aboutPost.description }}
         ></div>
         <div className="about__image">
           <img src={aboutPost.image.sourceUrl} alt="" />
@@ -44,5 +39,3 @@ const About = () => {
     </div>
   );
 };
-
-export default About;

@@ -1,7 +1,6 @@
-import * as React from 'react';
-import DOMPurify from 'dompurify';
+import React from 'react';
 
-const CompanyStatements = ({ companyInfo }) => {
+export const CompanyStatements = ({ companyInfo }) => {
   return (
     <div className="work-experience__metadata">
       <h2>{companyInfo.position}</h2>
@@ -15,13 +14,9 @@ const CompanyStatements = ({ companyInfo }) => {
       </div>
       <div
         dangerouslySetInnerHTML={{
-          __html: DOMPurify.sanitize(companyInfo.accomplishmentStatements, {
-            USE_PROFILES: { html: true },
-          }),
+          __html: companyInfo.accomplishmentStatements,
         }}
-      ></div>
+      />
     </div>
   );
 };
-
-export default CompanyStatements;

@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const TopProjects = () => {
+export const TopProjects = () => {
   const data = useStaticQuery(graphql`
     query getHomeProjects {
       allWpHomePosts(filter: { slug: { eq: "home-projects" } }) {
@@ -53,5 +53,3 @@ const TopProjects = () => {
     </div>
   );
 };
-
-export default TopProjects;

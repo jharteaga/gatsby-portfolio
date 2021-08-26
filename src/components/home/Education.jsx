@@ -1,8 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import DOMPurify from 'dompurify';
 
-const Education = () => {
+export const Education = () => {
   const data = useStaticQuery(graphql`
     query getEducationPosts {
       allWpHomePosts(filter: { slug: { eq: "education" } }) {
@@ -58,19 +57,12 @@ const Education = () => {
             <div
               className="program__statements"
               dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(
-                  e.education.accomplishmentStatements,
-                  {
-                    USE_PROFILES: { html: true },
-                  }
-                ),
+                __html: e.education.accomplishmentStatements,
               }}
-            ></div>
+            />
           </div>
         ))}
       </div>
     </div>
   );
 };
-
-export default Education;
